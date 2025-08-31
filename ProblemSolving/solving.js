@@ -185,4 +185,20 @@ console.log(findNum(3, 2, 9));
 console.log(findNum(3, -8, -6));
 
 
-//  
+//  solution-4
+// using Math.min
+
+const findSmall = function (a, b, c) {
+     return `${Math.min(a, b, c)} is small Num`
+     
+}
+
+console.log(findSmall(8, 4, 9));
+console.log(findSmall(-8, -99, -78));
+console.log(findSmall(8, -3, 1));
+console.log(findSmall(1, 1, 1));
+
+
+// solution-5
+// using Array.sort
+
