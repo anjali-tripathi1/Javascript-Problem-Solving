@@ -292,6 +292,15 @@ function returnstringusingMethods (value) {
 console.log(returnstringusingMethods('Hello World'));
 
 
+function returnStringUsingRecursion (value) {
+      if(value === ''){
+          return ''
+      }
+
+      return returnStringUsingRecursion(value.subStr(1)) + value[0]
+}
+
+console.log(returnStringUsingRecursion('Hello'));
 
 
 
