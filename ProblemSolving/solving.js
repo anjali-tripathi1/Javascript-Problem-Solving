@@ -130,6 +130,12 @@ console.log(check(-30));
 
 
 function findSmallestNumber (a, b, c) {
+    if(typeof a === 'string' || typeof b !== 'number' || typeof c === 'string'){
+         throw new Error('Please enter a number')
+    }
+    if(a === 0 || b === 0 || c === 0){
+         throw new Error('Num should not be 0.')
+    }
      if(a < b && a < c){
          return `${a} is smallest number`
      } 
@@ -148,7 +154,7 @@ console.log(findSmallestNumber(87, 52, 81));
 console.log(findSmallestNumber(7, 2, 8));
 console.log(findSmallestNumber(-7, -2, -8));
 console.log(findSmallestNumber(-7, -2, 8));
-console.log(findSmallestNumber(-0, -8, 8));
+console.log(findSmallestNumber(-87, -8, 8));
 console.log(findSmallestNumber(2, 2, 2));
 console.log(findSmallestNumber(2, 2, 5));
 console.log(findSmallestNumber(5, 1, 5));
@@ -158,6 +164,12 @@ console.log(findSmallestNumber(23.5, 9.0, 2.5));
 // solution-2 
 
 const find = function findSmallestNumber (a, b, c) {
+    if(typeof a === 'string' || typeof b !== 'number' || typeof c === 'string'){
+         throw new Error('Please enter a number')
+    }
+    if(a === 0 || b === 0 || c === 0){
+         throw new Error('Num should not be 0.')
+    }
      let smallestnum = a
      if(smallestnum > b){
          smallestnum = b 
@@ -170,13 +182,19 @@ const find = function findSmallestNumber (a, b, c) {
 }
 
 console.log(find(5, 8, 10));
-console.log(find(1, 3, 0));
+console.log(find(1, 3, 3));
 console.log(find(1.9, 3, 2.0));
 
 
 // solution-3
 
 const findNum = function (a, b, c) {
+    if(typeof a === 'string' || typeof b !== 'number' || typeof c === 'string'){
+         throw new Error('Please enter a number')
+    }
+    if(a === 0 || b === 0 || c === 0){
+         throw new Error('Num should not be 0.')
+    }
       let smallNum = a < b ? (a<c ? a:c) : (b<c ? b:c)
       return `${smallNum} is smallest number`
 }
@@ -189,6 +207,12 @@ console.log(findNum(3, -8, -6));
 // using Math.min
 
 const findSmall = function (a, b, c) {
+    if(typeof a === 'string' || typeof b !== 'number' || typeof c === 'string'){
+         throw new Error('Please enter a number')
+    }
+    if(a === 0 || b === 0 || c === 0){
+         throw new Error('Num should not be 0.')
+    }
      return `${Math.min(a, b, c)} is small Num`
      
 }
@@ -202,3 +226,78 @@ console.log(findSmall(1, 1, 1));
 // solution-5
 // using Array.sort
 
+const findSmallNum = function (a, b, c) {
+    if(typeof a === 'string' || typeof b !== 'number' || typeof c === 'string'){
+         throw new Error('Please enter a number')
+    }
+    if(a === 0 || b === 0 || c === 0){
+         throw new Error('Num should not be 0.')
+    }
+     const array = [a, b, c]
+     array.sort((a, b) => { return a - b})
+     return `${array[0]} is small num`
+}
+
+console.log(findSmallNum(54, 87, 23));
+console.log(findSmallNum(5, -8, -3));
+// console.log(findSmallNum(5, 0, -4));
+
+
+
+//   6. Write a function that returns the reverse of string.
+
+// solution-1
+
+function returnReverseString(value) {
+    if(typeof value === 'number'){
+         throw new Error('Please Enter a number.')
+    }
+      const string =  value.split('')
+      const reverse = string.reverse()
+      const join = reverse.join('')
+      return `${value} converts to ${join}`
+}
+
+console.log( returnReverseString('Anjali'));
+console.log( returnReverseString('12345'));
+// console.log( returnReverseString(12345));
+
+
+// solution-2
+
+const returnString = function (value) {
+    if(typeof value === 'number'){
+         throw new Error('Please Enter a number.')
+    }
+    let result = ''
+     for (let i = value.length - 1; i >= 0; i--) {
+          result += value[i]
+     }
+
+     return `${value} converts in ${result}`
+} 
+
+console.log(returnString('Saroj'));
+console.log(returnString('Sam'));
+ 
+// solution-3
+
+function returnstringusingMethods (value) {
+    if(typeof value === 'number'){
+         throw new Error('Please Enter a number.')
+    }
+    return `${value} converts in ${value.split('').reverse().join('')}` 
+}
+
+console.log(returnstringusingMethods('Hello World'));
+
+
+function returnStringUsingRecursion (value) {
+      if(value === ''){
+          return ''
+      }
+
+      return returnStringUsingRecursion(value.subStr(1)) + value[0]
+}
+
+console.log(returnStringUsingRecursion('Hello'));
