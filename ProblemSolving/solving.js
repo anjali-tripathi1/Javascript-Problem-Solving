@@ -299,11 +299,29 @@ function returnStringUsingRecursion (value) {
           return ''
       }
 
-      return returnStringUsingRecursion(value.subStr(1)) + value[0]
+      return returnStringUsingRecursion(value.slice(1)) + value[0]
 }
 
-console.log(returnStringUsingRecursion('Hello'));
+console.log(returnStringUsingRecursion('Hello Friends'));
 
 
 //   solution-5
 
+function returnStringUsingForOfLoop (value) {
+      let result = ''
+      for(const key of value){
+           result =  key + result 
+      }
+      return result
+}
+
+console.log(returnStringUsingForOfLoop('Hello'));
+
+// solution-6
+
+
+function returnStringUsingReduce (value) {
+      return value.split('').reduce((reversed, char) => {return char + reversed })
+}
+
+console.log(returnStringUsingReduce('Hello Guys'));
