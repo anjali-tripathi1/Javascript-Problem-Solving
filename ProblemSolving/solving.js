@@ -325,3 +325,10 @@ function returnStringUsingReduce (value) {
 }
 
 console.log(returnStringUsingReduce('Hello Guys'));
+
+
+//   7- Write a function that calculates factorial of a given number.
+
+
+//  solution-1
+
