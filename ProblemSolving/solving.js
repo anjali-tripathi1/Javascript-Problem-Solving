@@ -327,8 +327,136 @@ function returnStringUsingReduce (value) {
 console.log(returnStringUsingReduce('Hello Guys'));
 
 
-//   7- Write a function that calculates factorial of a given number.
+//   7. Write a function that calculates factorial of a given number.
 
 
 //  solution-1
 
+function calculateFactorial (num) {
+     if(num < 0){
+           throw new Error('num should be positive.')
+     }
+      let result = 1
+      for(let i = 1; i <= num; i++){
+            result *= i
+      }
+
+      return result
+}
+
+console.log(calculateFactorial( 5));
+console.log(calculateFactorial( 0));
+
+
+// solution-2
+
+
+function calculateFactorialUsingRecursion ( num) {
+     if(num === 0 || num === 1){
+           return 1
+     }
+     return num * calculateFactorialUsingRecursion(num - 1)
+}
+
+console.log(calculateFactorialUsingRecursion(5));
+
+
+
+// solution-3 
+
+function calculateFactorialUsingReduce (num) {
+     if(num === 1 || num === 0){
+           return 1
+     }
+
+     return [...Array(num).keys()].map((i) => i + 1).reduce((acc, val) => acc * val, 1)
+}
+
+console.log(calculateFactorialUsingRecursion(6));
+
+
+// 8.  write a function that tells if provided year is leap year.
+
+
+// solution-1
+
+function isLeapYear (num) {
+      return num % 4 === 0 ? `${num} is Leap Year` : `${num} is not Leap Year`
+}
+
+console.log(isLeapYear(2005));
+
+
+// solution-2 
+
+const leap = function (num) {
+     const leap = num % 4
+     if(leap === 0){
+         return `${num} is Leap Year.` 
+     } else {
+         return `${num} is not Leap Year.` 
+     }
+}
+
+console.log(leap(2009));
+console.log(leap(2008));
+console.log(leap(2024));
+
+
+//  solution-3
+
+
+//   9. Write a function that calculates and prints the sum of the digits of a number.
+
+
+// solution-1
+
+function calculateSum (num) {
+     const string = num.toString()
+     const split = string.split('')
+     // console.log(split);
+     let sumDigit = 0
+     split.forEach((num) => {
+          // console.log(parseInt(num));
+         sumDigit = sumDigit + parseInt(num)
+     })
+     
+     return sumDigit
+     
+}
+
+console.log( calculateSum(14));
+console.log( calculateSum(7843));
+
+
+// solution-2
+
+const sum = function (num) {
+    let number = num 
+    let sum = 0
+    while(number > 0){
+       let lastDigit = number % 10
+       number = Math.floor(number/10)
+       sum = sum + lastDigit
+    }
+
+    return sum
+
+}
+
+console.log(sum(57));
+console.log(sum(37));
+console.log(sum(375));
+
+
+// solution-3
+
+const calculateSum2 = (number) => {
+     const Digits = number.toString().split('')
+     const reduce = Digits.reduce((acc, digit) => {return acc + parseInt(digit)}, 0)
+     return reduce
+     
+}
+
+console.log(calculateSum2(57)); 
+console.log(calculateSum2(57854)); 
