@@ -640,3 +640,27 @@ genrateTable(5, 7)
 
    tableUsingRecursion(19, 10)
 //    tableUsingRecursion(19, 1.5)
+
+
+
+
+
+//     11.  Write a function that prints and returns the maximum element in an array of numbers.
+
+
+function printMaxElement (array) {
+     console.log(array);
+     let biggestNumber = array[0] 
+     for(let i = 1; i < array.length; i++){
+         if(array[i] > biggestNumber){
+               biggestNumber = array[i]  
+           }
+         }
+
+         return biggestNumber
+    
+}
+
+console.log( printMaxElement([8, 23, 45, 78, 95]));
+
+
