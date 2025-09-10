@@ -460,3 +460,183 @@ const calculateSum2 = (number) => {
 
 console.log(calculateSum2(57)); 
 console.log(calculateSum2(57854)); 
+
+
+//  10.  Write a function that genrates and prints a multiplication table for a given number up
+          //   to specified range.
+
+     
+      //  solution-1
+     
+      
+ function genrateTable (tableof, tabletill) {
+     if(tableof <= 0 || tabletill <= 0){
+          throw new Error('Please Enter a Positive number')
+     }
+
+      if(typeof tableof !== 'number' || typeof tabletill === 'string'){
+                throw new Error('Please Enter a Number')
+          }
+
+       if(!Number.isInteger(tableof) || !Number.isInteger(tabletill)){
+                throw new Error('Value should be Integer.')
+          }   
+
+       for(let i = 1; i <= tabletill; i++){
+              console.log(`Table of ${tableof} and ${i} : ${i * tableof}`);
+              
+       }
+       
+ }     
+
+genrateTable(5, 7)
+
+
+//  solution-2
+
+
+  const table = function (tableof, tabletill) {
+        if(tableof <= 0 || tabletill <= 0){
+          throw new Error('Please Enter a Positive number')
+        }
+
+        if(typeof tableof !== 'number' || typeof tabletill === 'string'){
+                throw new Error('Please Enter a Number')
+          }
+
+          if(!Number.isInteger(tableof) || !Number.isInteger(tabletill)){
+                throw new Error('Value should be Integer.')
+          }
+
+       for(let i = tableof; i <= tableof * tabletill; i = i + tableof){
+              console.log(i);
+              
+       }
+  }
+ 
+  table(8, 5)
+
+
+  // solution-3
+
+
+  const tableFromArray = function (tableof, tabletill) {
+            if(tableof <= 0 || tabletill <= 0){
+          throw new Error('Please Enter a Positive number')
+          }
+
+           if(typeof tableof !== 'number' || typeof tabletill === 'string'){
+                throw new Error('Please Enter a Number')
+          }
+
+          if(!Number.isInteger(tableof) || !Number.isInteger(tabletill)){
+                throw new Error('Value should be Integer.')
+          }
+
+            Array.from({length:tabletill}, (_, i) => {
+            console.log(`${tableof} * ${i + 1} = ${tableof * (i + 1)}`);
+            
+       }) 
+       
+  }
+
+  tableFromArray(9, 5)
+
+
+  // solution-4
+
+  const tableUsingWhile = function (tableof, tabletill) {
+          if(tableof <= 0 || tabletill <= 0){
+          throw new Error('Please Enter a Positive number')
+          }
+
+           if(typeof tableof !== 'number' || typeof tabletill === 'string'){
+                throw new Error('Please Enter a Number')
+          }
+
+          if(!Number.isInteger(tableof) || !Number.isInteger(tabletill)){
+                throw new Error('Value should be Integer.')
+          }
+
+          let i = 1
+          while(i <= tabletill){
+            console.log(`${tableof} * ${i} = ${tableof * i}`)
+            i = i + 1
+       }
+  }
+
+  tableUsingWhile(12, 10)
+
+
+  //   solution-5
+
+  const tableUsingWhileDo = function (tableof, tabletill) {
+          if(tableof <= 0 || tabletill <= 0){
+          throw new Error('Please Enter a Positive number')
+          }
+
+           if(typeof tableof !== 'number' || typeof tabletill === 'string'){
+                throw new Error('Please Enter a Number')
+          }
+
+          if(!Number.isInteger(tableof) || !Number.isInteger(tabletill)){
+                throw new Error('Value should be Integer.')
+          }
+
+          let i = 1
+         do {
+              console.log(`${tableof} * ${i} = ${tableof * i}`)
+               i++
+          } while (i <= tabletill)
+  }
+
+   tableUsingWhileDo(13, 8)
+
+
+   const tableUsingForEach = function (tableof, tabletill) {
+          if(tableof <= 0 || tabletill <= 0){
+          throw new Error('Please Enter a Positive number')
+          }
+
+           if(typeof tableof !== 'number' || typeof tabletill === 'string'){
+                throw new Error('Please Enter a Number')
+          }
+
+          if(!Number.isInteger(tableof) || !Number.isInteger(tabletill)){
+                throw new Error('Value should be Integer.')
+          }
+
+           const each = Array.from({length:tabletill}, (_, i) => i + 1 )
+             each.forEach((i) => {
+             console.log(`${tableof} * ${i} = ${tableof * i}`);
+             
+         })
+            
+   }
+
+   tableUsingForEach(16, 8)
+
+
+   // solution-6
+
+   const tableUsingRecursion = function (tableof, tabletill, i = 1) {
+       if(tableof <= 0 || tabletill <= 0){
+          throw new Error('Please Enter a Positive number')
+          }
+
+          if(typeof tableof !== 'number' || typeof tabletill === 'string' ){
+                throw new Error('Please Enter a Number')
+          }
+
+          if(!Number.isInteger(tableof) || !Number.isInteger(tabletill)){
+                throw new Error('Value should be Integer.')
+          }
+
+          if(i > tabletill) return 
+              console.log(`${tableof} * ${i} = ${tableof * i}`);
+              tableUsingRecursion(tableof, tabletill, i+1)
+         
+   }
+
+   tableUsingRecursion(19, 10)
+//    tableUsingRecursion(19, 1.5)
