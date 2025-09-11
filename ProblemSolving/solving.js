@@ -700,11 +700,11 @@ console.log(max(87, 45, 23, 91, 65));
 
 function isPalindrome (inputString) {
      //  console.log(inputString);
-      const split = inputString.split('')
-      const reverse = split.reverse()
-      const string = reverse.join('')
+      const split = inputString.split('').reverse().join('')
+     //  const reverse = split.reverse()
+     //  const string = reverse.join('')
      //  console.log("reverse : " , string);
-      if(inputString === string){
+      if(inputString === split){
            return `${inputString} is true`
       } else{
            return `${inputString} is false`
@@ -717,3 +717,52 @@ console.log( isPalindrome('katak'));
 console.log( isPalindrome('abba'));
 console.log( isPalindrome('Anjali'));
 console.log( isPalindrome('Saroj'));
+
+
+
+//   solution-2
+
+
+const palindrome = function (inputString) {
+     for(let i = 0; i <= inputString.length / 2; i++){
+           if(inputString[i] !== inputString[inputString.length - 1 - i]){
+                return `${inputString} is false`
+           }
+      }
+
+      return `${inputString} is true`
+      
+}
+
+console.log( palindrome('Anjali'));
+console.log( palindrome('level'));
+
+
+
+//  solution-3 
+
+
+const isPalindrome2 = function (inputString) {
+      inputString = inputString.toLowerCase()
+      let start = 0
+      let end = inputString.length - 1
+      for(start, end; start < end; start++, end--){
+           if(inputString[start] !== inputString[end]) {
+                 return `${inputString} is false`
+           }
+      }
+
+      return `${inputString} is true`
+}
+
+
+console.log(isPalindrome2('Anjali'));
+console.log(isPalindrome2('Level'));
+
+
+
+//     12.   Write a function that returns the result of raising a given number to a specified number.
+
+function calculatePower (base, exponent) {
+      
+} 
