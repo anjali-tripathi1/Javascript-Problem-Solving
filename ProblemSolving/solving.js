@@ -649,7 +649,15 @@ genrateTable(5, 7)
 
 
 function printMaxElement (array) {
-     console.log(array);
+     // console.log(array);
+     if(!array || array.length === 0 ){
+           throw new Error('we need some numbers in the array')
+     }
+
+     if(Number.isNaN(array.length)){
+         throw new Error('Please Enter a number Value.')
+     }
+
      let biggestNumber = array[0] 
      for(let i = 1; i < array.length; i++){
          if(array[i] > biggestNumber){
@@ -657,10 +665,33 @@ function printMaxElement (array) {
            }
          }
 
-         return biggestNumber
+         return `${biggestNumber} is biggest number.`
     
 }
 
 console.log( printMaxElement([8, 23, 45, 78, 95]));
+// console.log( printMaxElement([]));
+// console.log(printMaxElement(null));
+console.log(printMaxElement([6, 4, 4, 15, 25, '35']));
+
+
+//    solution-2
+
+const printMax = function (array) {
+      const max = Math.max(...array)
+      return `${max} is the biggest number.`
+      
+} 
+
+console.log(printMax([34, 87, 93, 25, 47]));
+
+const max = function (array) {
+     const max = Math.max(array)
+     return max 
+}
+
+console.log(max(87, 45, 23, 91, 65));
+
+
 
 
