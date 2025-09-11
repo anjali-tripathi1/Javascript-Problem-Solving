@@ -909,3 +909,32 @@ function calculateFactors (num) {
 }
 
 console.log( calculateFactors(35));
+
+
+
+//     14.  Write a function that calculates and returns the average of a set of numbers.
+
+
+function calculateAverage (array) {
+     // if(array === Array){
+     //      throw new Error('Value should be in array')
+     // }
+
+     if(array <= 0){
+          throw new Error('Value should be a positive integer.')
+     }
+
+     let sum = 0
+    for(let i = 0; i < array.length; i++){
+     //     console.log(array[i]);
+         sum += array[i]
+    }
+
+    let result = sum / array.length 
+    return `Sum of [${array}] is : ${sum} and Average is : ${result}`
+}
+
+console.log(calculateAverage([1, 4, 5, 43, 5]));
+console.log(calculateAverage([1, 4, 5, 0, 5]));
+ 
+ 
