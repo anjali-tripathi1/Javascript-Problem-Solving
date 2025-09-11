@@ -695,3 +695,25 @@ console.log(max(87, 45, 23, 91, 65));
 
 
 
+//     11. Write a function that checks if a string is palindrome on not.
+
+
+function isPalindrome (inputString) {
+     //  console.log(inputString);
+      const split = inputString.split('')
+      const reverse = split.reverse()
+      const string = reverse.join('')
+     //  console.log("reverse : " , string);
+      if(inputString === string){
+           return `${inputString} is true`
+      } else{
+           return `${inputString} is false`
+      }
+}
+
+console.log( isPalindrome('jahaj'));
+console.log( isPalindrome('madam'));
+console.log( isPalindrome('katak'));
+console.log( isPalindrome('abba'));
+console.log( isPalindrome('Anjali'));
+console.log( isPalindrome('Saroj'));
