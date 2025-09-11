@@ -761,8 +761,151 @@ console.log(isPalindrome2('Level'));
 
 
 
-//     12.   Write a function that returns the result of raising a given number to a specified number.
+//     12.   Write a function that returns the result of raising a given number to a specified power.
 
 function calculatePower (base, exponent) {
+     if(base <= 0 || exponent <= 0){
+           throw new Error('Value should be a positive number.')
+     }
+      let result = 1
+      for(let i = 1; i <= exponent; i++){
+             result = result * base
+            
+      }
+
+      return  `Power of ${base} to the ${exponent}  is : ${result}`    
       
 } 
+
+console.log( calculatePower(5, 4));
+console.log( calculatePower(7, 3));
+
+   
+
+//   solution-2
+
+const power = function (base, exponent) {
+      const pow = Math.pow(base, exponent)
+      return `Power of ${base} to the ${exponent} is:  ${pow} `
+}
+
+console.log(power(8, 3));
+
+
+
+//   solution-3
+
+const power2 = function (base, exponent) {
+      return `Power of ${base} to the ${exponent} : ${base ** exponent}` 
+}
+
+console.log(power2(5, 4));
+
+
+
+//   solution-4
+
+const calPower = (base, exponent) => `Power of ${base} to the ${exponent} : ${base ** exponent}`
+
+console.log(calPower(12, 2));
+
+
+
+//    13.   Write a function that counts and prints the number of vowels and consonents in given string.
+
+
+function countVowelAndConsonent (string) {
+     string = string.toLowerCase()
+     string = string.replace(/ /g, '')
+     console.log('After Clean up is :', string );
+     let vowels = 'aeiou' 
+     let consonent = 'bcdfghjklmnpqrstvwxyz'
+
+     let vowelCount = 0
+     let consonentCount = 0
+     for(let i = 0; i < string.length; i++){
+           if(vowels.includes(string[i])){
+                 vowelCount++    
+            }
+
+            else if(consonent.includes(string[i])){
+                 consonentCount++
+            }
+
+            else {
+                console.log(string[i], 'Is neither vowel nor consonent');
+                
+            }
+        }
+
+        return {vowelCount, consonentCount}
+}
+
+console.log(countVowelAndConsonent('Anjali Tripathi 123'));
+
+
+
+//  solution-2
+
+const  vowelAndConsonent = function (string) {
+      string = string.toLowerCase()
+      string = string.replace(/ /g, '')
+      console.log("After Clean up is :", string);
+      
+      let vowels = 'aeiou'
+      let consonents = 'bcdfghjklmnpqrstvwxyz'
+      let vowelCount = 0
+      let consonentCount = 0
+      for(let i = 0; i < string.length; i++){
+           if(vowels.includes(string[i])){
+                vowelCount++
+           } 
+
+           else if (/^[a-z]$/.test(string[i])) {
+                     consonentCount++
+           }
+
+           else{
+               console.log(string[i], 'is neither vowel nor consonent');
+               
+           }
+      }
+
+      return {vowelCount, consonentCount}
+
+
+}
+
+console.log(vowelAndConsonent('Anjali Tripathi 123'));
+
+
+
+//  13. Write a function that finds all the factors of a given number.
+
+
+function calculateFactors (num) {
+     if(num < 1){
+          throw new Error('num should be greater than 0')
+     }
+
+     if(typeof num !== 'number'){
+           throw new Error('Num should be a number value.')
+     }
+
+     if(!Number.isInteger(num)){
+          throw new Error('Num should be integer.')
+     }
+
+     
+     const result = []
+      for(let i = 1; i <= num; i++){
+          if(num % i === 0){
+               result.push(i)
+          }
+            
+      }
+
+      return `${result } are Factors of ${num}`
+}
+
+console.log( calculateFactors(35));
