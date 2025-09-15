@@ -284,7 +284,7 @@ console.log(returnString('Sam'));
 
 function returnstringusingMethods (value) {
     if(typeof value === 'number'){
-         throw new Error('Please Enter a number.')
+         throw new Error('Please Enter a string.')
     }
     return `${value} converts in ${value.split('').reverse().join('')}` 
 }
