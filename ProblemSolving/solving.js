@@ -920,9 +920,7 @@ function calculateAverage (array) {
      //      throw new Error('Value should be in array')
      // }
 
-     if(array <= 0){
-          throw new Error('Value should be a positive integer.')
-     }
+    
 
      let sum = 0
     for(let i = 0; i < array.length; i++){
@@ -935,6 +933,6 @@ function calculateAverage (array) {
 }
 
 console.log(calculateAverage([1, 4, 5, 43, 5]));
-console.log(calculateAverage([1, 4, 5, 0, 5]));
+console.log(calculateAverage([1, 4, 5, 5, 5]));
  
  
