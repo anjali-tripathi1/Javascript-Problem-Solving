@@ -936,3 +936,40 @@ console.log(calculateAverage([1, 4, 5, 43, 5]));
 console.log(calculateAverage([1, 4, 5, 5, 5]));
  
  
+
+
+
+//    15. Write a function that returns and prints simple interest on loan ammount.
+
+
+function calculateSi (principalAmout, time, rateYearly) {
+     if(typeof principalAmout === 'string' || typeof time !== 'number' || typeof rateYearly === 'string' ){
+          throw new Error('PrincipalAmount, rateInterest and time should be number.')
+     }
+      return  ( principalAmout*time*rateYearly/100).toFixed(2)
+}
+
+console.log(calculateSi(10000, 5, 1));
+console.log(calculateSi(20000, 10, 5));
+console.log(calculateSi(20000, 5, 8.755));
+console.log(calculateSi(20000.88, 5, 8.755));
+
+
+
+
+
+//   16.   Write a function that tells if the given number is prome or not.
+
+
+function isPrimeOrNot (num) {
+      if(num / 1, num === 0){
+           return `${num} is Prime`
+      } 
+     
+      else if(num / 1, num !== 0){
+          return `${num} is not Prime`
+      }
+}
+
+console.log(isPrimeOrNot(2));
+
