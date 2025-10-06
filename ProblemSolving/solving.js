@@ -971,5 +971,5 @@ function isPrimeOrNot (num) {
       }
 }
 
-console.log(isPrimeOrNot(2));
+console.log(isPrimeOrNot(5));
 
