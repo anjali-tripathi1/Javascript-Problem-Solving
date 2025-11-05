@@ -34,19 +34,49 @@ console.log(isPalindrome('Madam'));
 
 
 function pow (base, exponent) {
-   let result  = 1
-    for(let i = 1; i <= exponent; i++){
-           result = result * base;
-    }
-
-    return result;
+   return base**exponent;
 }
 
-console.log(pow(2,6));
+console.log(pow(5, 6));
 
-function power (base, exponent) {
-    let po = Math.pow(base , exponent)
-    return po;
-} 
+function vowelAndConsonent (string) {
+     string = string.toLowerCase();
+     string = string.replace(/ /g, '')
+     console.log('After cleanup is', string);
+     let vowel = 'aeiou';
+     let consonent = 'bcdfghjklmnpqrstvwxyz';
+     let vowelCount = 0;
+     let consonentCount = 0;
+     for(let i = 0; i < string.length; i++){
+           if(vowel.includes(string[i])){
+               vowelCount++;
+           }
 
-console.log(power(7, 3));
+           else if(/^[a-z]$/.test(string[i])){
+               consonentCount++;
+           }
+
+           else {
+               console.log(string), 'Negither vowel nor consonent.'
+           }
+     }
+
+     return {vowelCount, consonentCount}
+}
+
+console.log(vowelAndConsonent('Anjali Tripathi 123'));
+
+function calculateFactors (num) {
+     const array = [];
+     for(let i = 0; i <= num; i++){
+         if(num % i === 0){
+             array.push(i)
+         }
+     } 
+
+     return array;
+}
+
+console.log(calculateFactors(6));
+
+
