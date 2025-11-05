@@ -79,4 +79,15 @@ function calculateFactors (num) {
 
 console.log(calculateFactors(6));
 
+function calAvg () {
+    let sum = 0;
+    for(let i = 0; i < arguments.length; i++){
+         sum += arguments[i];
+    }
+
+    let result = sum / arguments.length;
+    return result;
+}
+
+console.log(calAvg(3, 2, 5, 7, 8, 3, 2));
 
