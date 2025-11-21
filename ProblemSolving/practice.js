@@ -91,3 +91,9 @@ function calAvg () {
 
 console.log(calAvg(3, 2, 5, 7, 8, 3, 2));
 
+function si (p, r, t) {
+     return (p*r*t)/100
+}
+
+console.log(si(20000, 8.5, 5).toFixed(2));
+

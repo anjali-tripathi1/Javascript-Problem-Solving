@@ -962,14 +962,17 @@ console.log(calculateSi(20000.88, 5, 8.755));
 
 
 function isPrimeOrNot (num) {
-      if(num / 1, num === 0){
-           return `${num} is Prime`
-      } 
-     
-      else if(num / 1, num !== 0){
-          return `${num} is not Prime`
-      }
+     let result = true;
+     for(let i = 2; i < num; i++){
+        if(num % i === 0){
+             result = false;
+         }
+     }
+
+     return result;
+    
 }
 
-console.log(isPrimeOrNot(5));
+console.log(isPrimeOrNot("6 is", 6));
+console.log(isPrimeOrNot("87 is ", 87));
 
