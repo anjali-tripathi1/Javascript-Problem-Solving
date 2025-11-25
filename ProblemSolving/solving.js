@@ -976,3 +976,23 @@ function isPrimeOrNot (num) {
 console.log(isPrimeOrNot("6 is", 6));
 console.log(isPrimeOrNot("87 is ", 87));
 
+
+// Write a function that counts and returns the number of words in a sentence
+
+function countSen(sentence){
+      console.log("before Trim", sentence);
+      sentence = sentence.trim();
+      console.log("After Trim", sentence);
+      let splitSen = sentence.split(' ')
+      console.log(splitSen);
+      const nonEmpty = splitSen.filter((e) => e != '')
+      console.log(nonEmpty);
+      return nonEmpty.length;
+}
+
+console.log(countSen('This is ... new project'));
+console.log(countSen('Hello   World'));
+console.log(countSen('Hello This is new World'));
+console.log(countSen('Hello  This is new World'));
+ 
+
