@@ -97,3 +97,38 @@ function si (p, r, t) {
 
 console.log(si(20000, 8.5, 5).toFixed(2));
 
+function evenodd(num) {
+     return num % 2 === 0? 'even' :' odd'
+}
+
+console.log(evenodd(4));
+
+function rec (num) {
+     if(num === 0 || num ===1){
+         return 1;
+     }
+
+     return num * rec(num - 1);
+}
+
+console.log(rec(6));
+
+function sum (num) {
+   let str = num.toString().split('')
+   let sum = 0
+   str.forEach((val) => {
+      sum = sum + parseInt(val)
+   })
+
+   return sum;
+}
+
+console.log(sum(5665));
+
+function tab ( start, till) {
+    for(let i = 1; i <= till; i++ ){
+         console.log(start * i)
+    }
+}
+
+tab(5, 6)
